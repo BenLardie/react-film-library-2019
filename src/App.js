@@ -1,9 +1,15 @@
 import React from 'react';
+import FileListing from './FilmListing';
+import FilmDetails from './FilmDetails';
 
 const App = () => {
   return (
     <main className="film-library">
-      APP GOES HERE
+
+    <FileListing />
+    <FilmDetails />
+
+
     </main>
   );
 }
