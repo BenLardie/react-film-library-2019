@@ -2,11 +2,16 @@ import React from 'react';
 import FilmPoster from './FilmPoster';
 import Fave from './Fave';
 
-const Film = ({film}) => {
+const FilmRow = ({film}) => {
+
+    const handleDetailsClick = () => {
+        console.log(`Film details for ${film.title}`)
+    }
+
     return (
     <article className='film-row'>
-     <FilmPoster film={film} />
-        <div className='film-summary'>
+    <FilmPoster film={film} />
+        <div className='film-summary' onClick={handleDetailsClick}>
             <h1>{film.title}</h1>
             <p>{new Date(film.release_date).getFullYear()}</p>
             <Fave />
@@ -15,4 +20,4 @@ const Film = ({film}) => {
     )
 }
 
-export default Film;
+export default FilmRow;

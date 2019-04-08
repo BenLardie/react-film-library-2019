@@ -3,6 +3,7 @@ import React from 'react';
 const Fave = () => {
 
     const handleClick = (event) => {
+        event.stopPropagation()
         console.log('click handled cutie')
     }
 
