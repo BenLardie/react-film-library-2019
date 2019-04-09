@@ -11,7 +11,7 @@ const Fave = () => {
         }
     }
 
-    
+    const toggleClassName = (isFave ? 'remove_from_queue' : 'add_to_queue');
 
 
     
@@ -26,8 +26,8 @@ const Fave = () => {
     
 
     return (
-        <div className="film-row-fave add_to_queue" onClick={handleClick}>
-            <i className="material-icons">add_to_queue</i>
+        <div className={`film-row-fave ${toggleClassName}`} onClick={handleClick}>
+            <i className="material-icons">{toggleClassName}</i>
         </div>
     )
 
