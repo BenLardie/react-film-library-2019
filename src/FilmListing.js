@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TMDB from './TMDB';
 import FilmRow from './Film';
 
@@ -12,12 +12,14 @@ const FilmListing = () => {
         )
     })
 
+    const [filter, setFilter] = useState('all');
+    const filterClass = (filter === 'all' ? 'faves' : 'all' )
+
     const handleFilterClick = (filter) => {
-        if (filter === 'fave') {
             console.log(`Setting filter to ${filter}`)
-        } else {
-            console.log(`Setting filter to ${filter}`)
-        }
+            setFilter(filter)
+            console.log(filterClass)
+        
     }
 
 
@@ -27,7 +29,7 @@ const FilmListing = () => {
             FILMS
             </h1>
 
-                <div className="film-list-filters">
+                <div className={`film-list-filters ${filterClass}`}>
                     <div className="film-list-filter" onClick={() => handleFilterClick('all')}>
                         ALL
                         <span className="section-count">{filmList.length}</span>
